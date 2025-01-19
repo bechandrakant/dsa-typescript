@@ -31,6 +31,31 @@ describe("Doubly Linked List", () => {
       expect(dll.length).toBe(2);
       expect(dll.head?.value).toBe(4);
       expect(dll.tail?.value).toBe(5);
+      dll.removeFirst();
+      dll.removeFirst();
+      dll.addFirst(1);
+      expect(dll.length).toBe(1);
+      expect(dll.head?.value).toBe(1);
+      expect(dll.tail?.value).toBe(1);
+    });
+
+    test("removeFirst", () => {
+      dll.addFirst(4);
+      dll.addFirst(3);
+      dll.addFirst(2);
+      dll.addFirst(1);
+      dll.removeFirst();
+      expect(dll.length).toBe(4);
+      expect(dll.head?.value).toBe(2);
+      expect(dll.tail?.value).toBe(5);
+      dll.removeFirst();
+      dll.removeFirst();
+      dll.removeFirst();
+      dll.removeFirst();
+      expect(dll.length).toBe(0);
+      expect(dll.head).toBeNull();
+      expect(dll.tail).toBeNull();
+      expect(dll.removeFirst()).toBeFalsy();
     });
   });
 });
