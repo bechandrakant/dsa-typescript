@@ -39,6 +39,19 @@ describe("Doubly Linked List", () => {
       expect(dll.tail?.value).toBe(1);
     });
 
+    test("addLast", () => {
+      dll.addLast(4);
+      expect(dll.length).toBe(2);
+      expect(dll.head?.value).toBe(5);
+      expect(dll.tail?.value).toBe(4);
+      dll.removeFirst();
+      dll.removeFirst();
+      dll.addLast(1);
+      expect(dll.length).toBe(1);
+      expect(dll.head?.value).toBe(1);
+      expect(dll.tail?.value).toBe(1);
+    });
+
     test("removeFirst", () => {
       dll.addFirst(4);
       dll.addFirst(3);
