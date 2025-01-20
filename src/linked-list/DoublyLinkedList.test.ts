@@ -27,16 +27,22 @@ describe("Doubly Linked List", () => {
     });
 
     test("add", () => {
-      dll.add(4, 0);
+      dll.add(3, 0);
       expect(dll.length).toBe(2);
-      expect(dll.head?.value).toBe(4);
+      expect(dll.head?.value).toBe(3);
       expect(dll.tail?.value).toBe(5);
+      dll.add(4, 1);
+      expect(dll.length).toBe(3);
+      expect(dll.toArray()).toStrictEqual([3, 4, 5]);
+      expect(dll.add(3, -1)).toBeUndefined();
+      expect(dll.add(3, 5)).toBeUndefined();
       dll.removeFirst();
       dll.removeFirst();
-      dll.addFirst(1);
-      expect(dll.length).toBe(1);
-      expect(dll.head?.value).toBe(1);
-      expect(dll.tail?.value).toBe(1);
+      dll.removeFirst();
+      dll.add(3, 0);
+      expect(dll.toArray()).toEqual([3]);
+      dll.add(6, 1);
+      expect(dll.toArray()).toEqual([3, 6]);
     });
 
     test("addFirst", () => {
@@ -82,6 +88,37 @@ describe("Doubly Linked List", () => {
       expect(dll.head).toBeNull();
       expect(dll.tail).toBeNull();
       expect(dll.removeFirst()).toBeFalsy();
+    });
+
+    test("removeLast", () => {
+      dll.removeLast();
+      expect(dll.head).toBe(null);
+      expect(dll.tail).toBe(null);
+      expect(dll.length).toBe(0);
+      expect(dll.removeLast()).toBeFalsy();
+      dll.addLast(1);
+      dll.addLast(2);
+      dll.addLast(3);
+      dll.addLast(4);
+      expect(dll.toArray()).toEqual([1, 2, 3, 4]);
+      dll.removeLast();
+      expect(dll.toArray()).toEqual([1, 2, 3]);
+    });
+
+    test("removeLast", () => {
+      expect(dll.remove(-1)).toBeFalsy();
+      expect(dll.remove(3)).toBeFalsy();
+      dll.remove(0);
+      expect(dll.length).toBe(0);
+      dll.addLast(1);
+      dll.addLast(2);
+      dll.addLast(3);
+      dll.addLast(4);
+      expect(dll.toArray()).toEqual([1, 2, 3, 4]);
+      dll.remove(2);
+      expect(dll.toArray()).toEqual([1, 2, 4]);
+      dll.remove(2);
+      expect(dll.toArray()).toEqual([1, 2]);
     });
 
     test("get should get element at that index", () => {

@@ -3,7 +3,7 @@
 ## Topics
 
 - [ ] Basic DSA Implementation
-  - [ ] Linked List
+  - [x] Linked List
   - [ ] Stack
   - [ ] Queue
   - [ ] Trees
