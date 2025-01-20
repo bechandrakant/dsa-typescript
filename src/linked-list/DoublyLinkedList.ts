@@ -48,6 +48,17 @@ export class DoublyLinkedList {
     this.length++;
   }
 
+  add(value: number, index: number) {
+    if (index < 0 || index > this.length) return undefined;
+    else if (index == 0) this.addFirst(value);
+    else if (index == this.length) this.addLast(value);
+    else {
+      const newNode = new DLL_Node(value);
+      while (--index) {}
+      this.length++;
+    }
+  }
+
   removeFirst() {
     if (this.head) {
       if (this.length == 1) {
@@ -63,5 +74,36 @@ export class DoublyLinkedList {
     } else {
       return false;
     }
+  }
+
+  get(index: number) {
+    if (index < 0 || index >= this.length) return undefined;
+
+    let cursor = this.head;
+    while (index--) {
+      cursor = cursor ? (cursor.next ? cursor.next : null) : null;
+    }
+
+    return cursor;
+  }
+
+  set(index: number, value: number) {
+    const element = this.get(index);
+    if (element) {
+      element.value = value;
+    } else {
+      return undefined;
+    }
+    return this;
+  }
+
+  toArray() {
+    let temp = this.head;
+    let arr = [];
+    while (temp) {
+      arr.push(temp.value);
+      temp = temp.next;
+    }
+    return arr;
   }
 }
