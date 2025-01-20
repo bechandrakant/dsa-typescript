@@ -4,8 +4,8 @@
 
 - [ ] Basic DSA Implementation
   - [x] Linked List
-  - [ ] Stack
-  - [ ] Queue
+  - [x] Stack
+  - [x] Queue
   - [ ] Trees
   - [ ] Hashtable
   - [ ] Graphs
