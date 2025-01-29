@@ -1,3 +1,12 @@
+export function isPrime(n: number) {
+  if (n < 2) return false;
+  let sqrt = Math.sqrt(n);
+  for (let i = 2; i <= sqrt; i++) {
+    if (n % i == 0) return false;
+  }
+  return true;
+}
+
 export function sqrt(n: number) {
   if (n < 0) return undefined;
   
@@ -39,4 +48,16 @@ export function isPerfectSquare(n: number) {
   }
 
   return false;
+}
+
+export function pattern(n: number) {
+  let res = [];
+  for (let i = 0; i < n; i++) {
+    let a = [];
+    for (let j = 1; j <= n; j++) {
+      a.push(j <= i + 1 ? j: 0);
+    }
+    res.push(a);
+  }
+  return res;
 }
