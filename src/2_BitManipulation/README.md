@@ -1,0 +1,18 @@
+## Questions
+
+- [x] Bit Manipulation
+  - [x] Add two large number
+    - Make number same size by adding zeroes
+    - Add as string
+    - For each digit, sum = (carry + num1[i] + num2[i]) % 10
+    - For each digit, carry = Math.floor((carry + num1[i] + num2[i]) / 10)
+    - If carry, add carry to result.
+    - TC: O(N), SC: O(1)
+  - [x] Find unique number in array, every element appears twice except 1.
+    - Take XOR of all elements
+    - TC: O(N), SC: O(1)
+  - [x] Given N check if ith bit is set.
+    - (N >> i) & i == 1
+    - N & (1 << i) != 0
+    - N & (1 << i) == (1 << i)
+    - TC: O(1), SC: O(1)
