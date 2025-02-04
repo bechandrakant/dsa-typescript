@@ -8,9 +8,6 @@
     - For each digit, carry = Math.floor((carry + num1[i] + num2[i]) / 10)
     - If carry, add carry to result.
     - TC: O(N), SC: O(1)
-  - [x] Find unique number in array, every element appears twice except 1.
-    - Take XOR of all elements
-    - TC: O(N), SC: O(1)
   - [x] Given N check if ith bit is set.
     - (N >> i) & i == 1
     - N & (1 << i) != 0
@@ -19,3 +16,15 @@
   - [x] Count set bits.
     - Iterate & increment count if ith bit is set.
     - TC: O(1), SC: O(1)
+  - [x] Find unique number in array, every element appears twice except 1.
+    - Take XOR of all elements
+    - TC: O(N), SC: O(1)
+  - [x] Find unique number in array, every element appears twice except 2.
+    - XOR of all elements (= XOR of 2 unique element)
+    - Divide array based on any set bit in XOR
+    - TC: O(1), SC: O(1)
+  - [x] Find unique number in array, every element appears thrice except 1.
+    - Count frequency of each bit
+    - Frequncy: 3x => unset bit
+    - Frequncy: 3x + 1 => set bit
+    - TC: O(N), SC: O(1)
