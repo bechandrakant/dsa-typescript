@@ -1,4 +1,4 @@
-import { addNumbers, addBinaryNumbers } from "./L2";
+import { addNumbers, addBinaryNumbers } from "./AddNumbers";
 
 test("addNumbers", () => {
   expect(addNumbers("2", "3")).toBe("5");
