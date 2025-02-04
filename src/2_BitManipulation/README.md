@@ -13,6 +13,9 @@
     - N & (1 << i) != 0
     - N & (1 << i) == (1 << i)
     - TC: O(1), SC: O(1)
+  - [x] Given N check if it is a power of 2.
+    - N & (N - 1) == 0
+    - TC: O(1), SC: O(1)
   - [x] Count set bits.
     - Iterate & increment count if ith bit is set.
     - TC: O(1), SC: O(1)
@@ -27,4 +30,7 @@
     - Count frequency of each bit
     - Frequncy: 3x => unset bit
     - Frequncy: 3x + 1 => set bit
+    - TC: O(N), SC: O(1)
+  - [x] Find missing number in array which contains all distinct number from 1 to N+1
+    - xor with 1 -> 1 to N+1
     - TC: O(N), SC: O(1)
