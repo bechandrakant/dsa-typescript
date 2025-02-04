@@ -16,3 +16,6 @@
     - N & (1 << i) != 0
     - N & (1 << i) == (1 << i)
     - TC: O(1), SC: O(1)
+  - [x] Count set bits.
+    - Iterate & increment count if ith bit is set.
+    - TC: O(1), SC: O(1)
