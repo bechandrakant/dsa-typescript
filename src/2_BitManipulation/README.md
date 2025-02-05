@@ -34,3 +34,9 @@
   - [x] Find missing number in array which contains all distinct number from 1 to N+1
     - xor with 1 -> 1 to N+1
     - TC: O(N), SC: O(1)
+  - [x] Sum of xor all pairs of elements in array
+    - Add contribution by each bit multiply by 2 (lower + upper triangle, diagonal will have zero contribution)
+    - Contribution by every single bit
+    - X: number of element in which ith bit is set
+    - Contribution = x _ (array_length - x) _ Math.pow(2, i)
+    - TC: O(N), SC: O(1)
